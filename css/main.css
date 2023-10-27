@@ -1,3 +1,7 @@
 body {
-    background-color: red;
+    background-color: rgb(238, 233, 233); 
+}
+
+.greenbox {
+    position: absolute;
 }

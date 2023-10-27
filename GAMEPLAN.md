@@ -9,12 +9,13 @@ Every x seconds an box (green) will appear and it will disappear after y seconds
 - Adding a score for every green box
 
 ### Milestone 1
-- [ ] Create a green box (fixed position)
-- [ ] Add functionality to click
-- [ ] Add functionality that box disappears after clicking
+- [x] Initial set up (git, github, repository, linking JS, CSS, HTML)
+- [x] Create a green box (fixed position)
+- [x] Add functionality to click
+- [x] Add functionality that box disappears after clicking
 
 ### Milestone 2
-- [ ] Add functionality to let the boxes appear on a random place on the screen
+- [x] Add functionality to let the boxes appear on a random place on the screen
 
 ### Milestone 3
 - [ ] Boxes disappears after y seconds
