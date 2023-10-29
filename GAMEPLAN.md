@@ -19,7 +19,7 @@ Every x seconds an box (green) will appear and it will disappear after y seconds
 
 ### Milestone 3
 - [x] Boxes disappears after y seconds
-- [ ] When box is not clicked within y seconds, game over (game over page)
+- [x] When box is not clicked within y seconds, game over (game over page)
 
 ### Milestone 4
 - [x] Add functionality that boxes will appear every x seconds
@@ -39,3 +39,6 @@ Every x seconds an box (green) will appear and it will disappear after y seconds
 - [ ] Red boxes become racoons
 - [ ] Background becomes a beach
 - [ ] Scoreboard becomes a trash can
+
+### Debugging
+- [ ] Boxes can't overlap

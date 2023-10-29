@@ -13,7 +13,6 @@ class GreenBox {
 
         this.parentElement = document.getElementById("gameboard")
         this.newBox = document.createElement("div")
-        
     }
     createBox() {
         this.newBox.classList.add("greenbox")
@@ -31,13 +30,16 @@ class GreenBox {
         const allGreenBoxes = document.querySelectorAll(".greenbox")
         allGreenBoxes.forEach(function (box) {
             box.addEventListener("click", function () {
-                box.style.display = "none" // adding
+                box.style.display = "none"
+                box.classList.add("box-clicked") // check of dit nodig is!!!
                 //console.log('click here')
             })
         })
     }
     disappearFromScreen() {
-        this.newBox.remove()
+        //this.newBox.remove() // deze aanpassen --> de box hoeft niet te worden verwijderd, het is game over na deze tijd
+        console.log('game over')
+        location.href = "./gameover.html"
     }
 }
 
@@ -47,7 +49,6 @@ const boxArray = [] // do I need this one?
 // box1.createBox()
 // box2.createBox()
 
-
 setInterval(function(){
     const nextBox = new GreenBox()
     nextBox.createBox()
@@ -56,6 +57,7 @@ setInterval(function(){
         nextBox.disappearFromScreen()
     },2500)
 }, 2000) 
+
 
 
 // BOX KRIJGT DISPLAY NONE, MAAR IS NOG NIET VERWIJDERD!!!
