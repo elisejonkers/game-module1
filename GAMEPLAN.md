@@ -42,3 +42,4 @@ Every x seconds an box (green) will appear and it will disappear after y seconds
 
 ### Debugging
 - [ ] Boxes can't overlap
+- [ ] Having two boxes in the screen at the same time (speeding up). Right now it will be game over immediately, because the allNotClick array can't be longer than 0

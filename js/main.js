@@ -16,6 +16,7 @@ class GreenBox {
     }
     createBox() {
         this.newBox.classList.add("greenbox")
+        this.newBox.classList.add("not-clicked")
 
         this.newBox.style.width = this.width + 'vw'
         this.newBox.style.height = this.height + 'vh'
@@ -27,19 +28,48 @@ class GreenBox {
 
     }
     clickAndRemove() {
-        const allGreenBoxes = document.querySelectorAll(".greenbox")
+        const allGreenBoxes = document.querySelectorAll(".greenbox") // creates an array
+        const allNotClicked = document.querySelectorAll(".not-clicked")
+        console.log(allNotClicked)
         allGreenBoxes.forEach(function (box) {
             box.addEventListener("click", function () {
                 box.style.display = "none"
-                box.classList.add("box-clicked") // check of dit nodig is!!!
+                box.classList.remove("not-clicked")
+                
+                //box.remove()
+
+                // new class
+                // when clickd, push into new array
+
+
+
+                //box.classList.add("box-clicked") // check of dit nodig is!!!
                 //console.log('click here')
             })
         })
     }
     disappearFromScreen() {
+        // hier moet komen: als na 2,5 seconden de box not steeds not-clicked heeft --> naar array
+        // als array.length>0, dan is het game over
+        const allNotClicked = document.querySelectorAll(".not-clicked")
+        if (allNotClicked.length > 0) {
+            //console.log('game-over')
+            location.href = "./gameover.html"
+        }
+
+
+        
+        
         //this.newBox.remove() // deze aanpassen --> de box hoeft niet te worden verwijderd, het is game over na deze tijd
-        console.log('game over')
-        location.href = "./gameover.html"
+        //const classClickedArray = document.querySelectorAll("div")
+        // //console.log("check")
+
+        // if (classClickedArray.classList.contains("box-clicked")){
+        //     console.log('check')
+        // }
+        
+        
+        
     }
 }
 
@@ -55,7 +85,7 @@ setInterval(function(){
     nextBox.clickAndRemove()
     setTimeout(function(){
         nextBox.disappearFromScreen()
-    },2500)
+    },1800)
 }, 2000) 
 
 
