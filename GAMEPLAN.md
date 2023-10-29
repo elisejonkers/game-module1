@@ -26,7 +26,7 @@ Every x seconds an box (green) will appear and it will disappear after y seconds
 
 ### Milestone 5 
 - [x] Add the second type of box with the right properties
-- [ ] Add the functionality of not clicking the red box
+- [x] Add the functionality of not clicking the red box
 - [ ] Add functionality so boxes will be random (green vs. red)
 
 ### Milestone 6
