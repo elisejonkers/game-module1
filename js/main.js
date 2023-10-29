@@ -3,9 +3,6 @@
 
 }*/
 
-
-
-
 class GreenBox {
     //position, size, functionalities
     constructor() {
@@ -29,42 +26,39 @@ class GreenBox {
 
         this.parentElement.appendChild(this.newBox)
 
-    //console.log('check creating a abox')
     }
     clickAndRemove() {
-      
-    }
-    
-    appearOnScreen() {
-        // Even necessary ???
-
+        const allGreenBoxes = document.querySelectorAll(".greenbox")
+        allGreenBoxes.forEach(function (box) {
+            box.addEventListener("click", function () {
+                box.style.display = "none" // adding
+                //console.log('click here')
+            })
+        })
     }
     disappearFromScreen() {
         this.newBox.remove()
     }
 }
 
-const boxArray = []
-const box1 = new GreenBox()
-
+const boxArray = [] // do I need this one?
+// const box1 = new GreenBox()
+// const box2 = new GreenBox()
+// box1.createBox()
+// box2.createBox()
 
 
 setInterval(function(){
     const nextBox = new GreenBox()
-    boxArray.push(nextBox)
     nextBox.createBox()
+    nextBox.clickAndRemove()
     setTimeout(function(){
         nextBox.disappearFromScreen()
     },2500)
 }, 2000) 
 
-const clickBox = document.querySelector('.greenbox')
 
-/*clickBox.addEventListener("click", e => {
-    clickBox.remove()
-}) */
-// So far, this only works for the first box
-
+// BOX KRIJGT DISPLAY NONE, MAAR IS NOG NIET VERWIJDERD!!!
 
 
 
