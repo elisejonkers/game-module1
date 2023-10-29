@@ -16,6 +16,7 @@ class GreenBox {
 
         this.parentElement = document.getElementById("gameboard")
         this.newBox = document.createElement("div")
+        
     }
     createBox() {
         this.newBox.classList.add("greenbox")
@@ -39,10 +40,7 @@ class GreenBox {
 
     }
     disappearFromScreen() {
-        setTimeout(function(){
-            console.log('testing timer')
-        }, 3000)
-        
+        this.newBox.remove()
     }
 }
 
@@ -50,13 +48,15 @@ const boxArray = []
 const box1 = new GreenBox()
 
 
-// setInterval(function(){
-//     const nextBox = new GreenBox()
-//     boxArray.push(nextBox)
-//     nextBox.createBox()
-// }, 3000) 
 
-
+setInterval(function(){
+    const nextBox = new GreenBox()
+    boxArray.push(nextBox)
+    nextBox.createBox()
+    setTimeout(function(){
+        nextBox.disappearFromScreen()
+    },2500)
+}, 2000) 
 
 const clickBox = document.querySelector('.greenbox')
 

@@ -12,17 +12,17 @@ Every x seconds an box (green) will appear and it will disappear after y seconds
 - [x] Initial set up (git, github, repository, linking JS, CSS, HTML)
 - [x] Create a green box (fixed position)
 - [x] Add functionality to click
-- [x] Add functionality that box disappears after clicking
+- [ ] Add functionality that box disappears after clicking
 
 ### Milestone 2
 - [x] Add functionality to let the boxes appear on a random place on the screen
 
 ### Milestone 3
-- [ ] Boxes disappears after y seconds
+- [x] Boxes disappears after y seconds
 - [ ] When box is not clicked within y seconds, game over (game over page)
 
 ### Milestone 4
-- [ ] Add functionality that boxes will appear every x seconds
+- [x] Add functionality that boxes will appear every x seconds
 
 ### Milestone 5 
 - [ ] Add the second type of box with the right properties
