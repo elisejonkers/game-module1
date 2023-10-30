@@ -16,7 +16,6 @@ class Game {
 
         this.parentElement.appendChild(this.newBox)
     }
-
 }
 
 class Greenbox extends Game {
@@ -29,7 +28,7 @@ class Greenbox extends Game {
         const allGreenBoxes = document.querySelectorAll(".greenbox")
         let scoreBoard = document.getElementById("score")
 
-        allGreenBoxes.forEach( (box) => { // does is has something to do with the array --> array.length 
+        allGreenBoxes.forEach( (box) => { 
             box.addEventListener("click",  () => {
                 count += 1
                 box.remove()
@@ -77,6 +76,13 @@ class Redbox extends Game {
 // //     redbox1.removeRed()
 // // }, 2400)
 
+let secondsDelay = 2400
+
+function decreaseDelaySeconds (){
+    setInterval(function () {
+        return secondsDelay -= 600
+    }, 15000)
+}
 
 setInterval(function () {
     const startGameGreen = new Greenbox()
@@ -85,9 +91,8 @@ setInterval(function () {
     startGameGreen.clickGreen()
     setTimeout(function () {
         startGameGreen.gameOverGreen()
-    }, 2400)
+    }, secondsDelay)
 }, 2500)
-
 
 function getRandomSeconds(min, max) {
     return (Math.random() * (max - min + 1) + min)
@@ -110,5 +115,9 @@ function intervalRandomSeconds() {
 }
 
 intervalRandomSeconds()
+decreaseDelaySeconds()
+
+
+
 
 
