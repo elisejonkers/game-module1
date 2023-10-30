@@ -34,7 +34,7 @@ Every x seconds an box (green) will appear and it will disappear after y seconds
 - [x] Changing the gameboard to a specific size
 
 ### Milestone 7s
-- [ ] Increasing the speed 
+- [x] Increasing the speed 
 
 ### Milestone 8: UI
 - [ ] Green boxes become banana peels
@@ -42,6 +42,8 @@ Every x seconds an box (green) will appear and it will disappear after y seconds
 - [ ] Background becomes a beach
 - [ ] Scoreboard becomes a trash can
 - [ ] Update game over page
+- [ ] Welcome page + 'start game' button
+- [ ] Encouraging phrases during game (at header?)
 
 ### Debugging
 - [ ] Boxes can't overlap
