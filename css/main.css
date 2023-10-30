@@ -2,6 +2,23 @@ body {
     background-color: rgb(238, 233, 233); 
 }
 
+header {
+    height: 5vh;
+    border-bottom: 2px solid black; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: aquamarine;
+}
+
+#gameboard {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 95vh;
+}
+
 .greenbox {
     position: absolute;
 }

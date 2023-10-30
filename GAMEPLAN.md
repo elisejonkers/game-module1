@@ -27,12 +27,13 @@ Every x seconds an box (green) will appear and it will disappear after y seconds
 ### Milestone 5 
 - [x] Add the second type of box with the right properties
 - [x] Add the functionality of not clicking the red box
-- [ ] Add functionality so boxes will be random (green vs. red)
+- [x] Add functionality so boxes will be random (green vs. red)
 
 ### Milestone 6
 - [ ] Keep track of score. Every clicked green box is +1
+- [ ] Changing the gameboard to a specific size
 
-### Milestone 7
+### Milestone 7s
 - [ ] Increasing the speed 
 
 ### Milestone 8: UI
@@ -44,4 +45,5 @@ Every x seconds an box (green) will appear and it will disappear after y seconds
 
 ### Debugging
 - [ ] Boxes can't overlap
+- [ ] Boxes sometimes still seem to take a little bit more than 100% of the screen width
 - [ ] Having two boxes in the screen at the same time (speeding up). Right now it will be game over immediately, because the allNotClick array can't be longer than 0

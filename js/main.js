@@ -2,6 +2,7 @@ class Game {
     constructor() {
         this.width = 15
         this.height = 15
+
     }
     createBox() {
         this.parentElement = document.getElementById("gameboard")
@@ -10,25 +11,31 @@ class Game {
         this.newBox.style.width = this.width + 'vw'
         this.newBox.style.height = this.height + 'vh'
         this.newBox.style.left = (Math.random() * (100 - this.width) + 1) + 'vw'
-        this.newBox.style.bottom = (Math.random() * (100 - this.height) + 1) + 'vh'
+        this.newBox.style.bottom = (Math.random() * (90 - this.height) + 1) + 'vh'
 
         this.parentElement.appendChild(this.newBox)
     }
+
 }
 
 class Greenbox extends Game {
     makeBoxGreen() {
         this.newBox.classList.add("greenbox")
         this.newBox.classList.add("not-clicked")
-        this.newBox.style.backgroundColor = 'limegreen' 
+        this.newBox.style.backgroundColor = 'limegreen'
     }
     clickGreen() {
-        const allGreenBoxes = document.querySelectorAll(".greenbox") 
+        const allGreenBoxes = document.querySelectorAll(".greenbox")
+        let scoreBoard = document.getElementById("score")
+        let count = 0
+
         allGreenBoxes.forEach(function (box) {
             box.addEventListener("click", function () {
-                box.style.display = "none"
                 box.remove()
+                count++
+                scoreBoard.innerHTML = `Score: ${count}`
             })
+
         })
     }
     gameOverGreen() {
@@ -42,10 +49,10 @@ class Greenbox extends Game {
 class Redbox extends Game {
     makeBoxRed() {
         this.newBox.classList.add("redbox")
-        this.newBox.style.backgroundColor = 'red' 
+        this.newBox.style.backgroundColor = 'red'
     }
     clickRed() {
-        const allRedBoxes = document.querySelectorAll(".redbox") 
+        const allRedBoxes = document.querySelectorAll(".redbox")
         allRedBoxes.forEach(function (box) {
             box.addEventListener("click", function () {
                 location.href = "./gameover.html"
@@ -57,18 +64,18 @@ class Redbox extends Game {
     }
 }
 
-// const greenbox1 = new Greenbox()
-// greenbox1.createBox()
-// greenbox1.createGreenBox()
-// greenbox1.clickGreen()
+// // const greenbox1 = new Greenbox()
+// // greenbox1.createBox()
+// // greenbox1.createGreenBox()
+// // greenbox1.clickGreen()
 
-// const redbox1 = new Redbox()
-// redbox1.createBox()
-// redbox1.makeBoxRed()
-// redbox1.clickRed()
-// setTimeout(function (){
-//     redbox1.removeRed()
-// }, 2400)
+// // const redbox1 = new Redbox()
+// // redbox1.createBox()
+// // redbox1.makeBoxRed()
+// // redbox1.clickRed()
+// // setTimeout(function (){
+// //     redbox1.removeRed()
+// // }, 2400)
 
 
 setInterval(function () {
