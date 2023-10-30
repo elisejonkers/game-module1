@@ -30,8 +30,8 @@ Every x seconds an box (green) will appear and it will disappear after y seconds
 - [x] Add functionality so boxes will be random (green vs. red)
 
 ### Milestone 6
-- [ ] Keep track of score. Every clicked green box is +1
-- [ ] Changing the gameboard to a specific size
+- [x] Keep track of score. Every clicked green box is +1
+- [x] Changing the gameboard to a specific size
 
 ### Milestone 7s
 - [ ] Increasing the speed 

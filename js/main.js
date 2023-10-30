@@ -1,8 +1,9 @@
+let count = 0
+
 class Game {
     constructor() {
         this.width = 15
         this.height = 15
-
     }
     createBox() {
         this.parentElement = document.getElementById("gameboard")
@@ -27,12 +28,11 @@ class Greenbox extends Game {
     clickGreen() {
         const allGreenBoxes = document.querySelectorAll(".greenbox")
         let scoreBoard = document.getElementById("score")
-        let count = 0
 
-        allGreenBoxes.forEach(function (box) {
-            box.addEventListener("click", function () {
+        allGreenBoxes.forEach( (box) => { // does is has something to do with the array --> array.length 
+            box.addEventListener("click",  () => {
+                count += 1
                 box.remove()
-                count++
                 scoreBoard.innerHTML = `Score: ${count}`
             })
 
