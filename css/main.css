@@ -10,7 +10,7 @@ header {
     height: 5vh;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     color: white;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
