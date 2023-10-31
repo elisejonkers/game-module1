@@ -40,9 +40,9 @@ Every x seconds an box (green) will appear and it will disappear after y seconds
 - [x] Green boxes become banana peels
 - [x] Red boxes become racoons
 - [x] Background becomes a beach
-- [ ] Scoreboard becomes a trash can
+- [x] Scoreboard becomes a trash can
 - [ ] Update game over page
-- [ ] Welcome page + 'start game' button
+- [x] Welcome page + 'start game' button
 - [ ] Encouraging phrases during game (at header?)
 
 ### Debugging
