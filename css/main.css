@@ -27,10 +27,15 @@ header {
 
 .greenbox {
     position: absolute;
-    background-image: url("../images/greenboximage.jpeg")
+    background-image: url("../images/greenboximage.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .redbox {
     position: absolute;
-    background-image: url("../images/redboximage.jpeg");
+    background-image: url("../images/redboximage.png");
+    background-size: cover;
+    background-position: center;
 }

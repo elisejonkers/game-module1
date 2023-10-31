@@ -37,8 +37,8 @@ Every x seconds an box (green) will appear and it will disappear after y seconds
 - [x] Increasing the speed 
 
 ### Milestone 8: UI
-- [ ] Green boxes become banana peels
-- [ ] Red boxes become racoons
+- [x] Green boxes become banana peels
+- [x] Red boxes become racoons
 - [x] Background becomes a beach
 - [ ] Scoreboard becomes a trash can
 - [ ] Update game over page
@@ -49,3 +49,4 @@ Every x seconds an box (green) will appear and it will disappear after y seconds
 - [ ] Boxes can't overlap
 - [ ] Boxes sometimes still seem to take a little bit more than 100% of the screen width
 - [ ] Having two boxes in the screen at the same time (speeding up). Right now it will be game over immediately, because the allNotClick array can't be longer than 0
+- [ ] Sizes of boxes match exactly the images of the banana and racoon

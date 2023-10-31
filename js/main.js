@@ -3,9 +3,9 @@ let count = 0
 
 class Box {
     constructor() {
-        this.width = 15
-        this.height = 15
-    }
+        this.width = 13
+        this.height = 19
+    }s
     createBox() {
         this.parentElement = document.getElementById("gameboard")
         this.newBox = document.createElement("div")
@@ -24,7 +24,7 @@ class Green extends Box {
     makeBoxGreen() {
         this.newBox.classList.add("greenbox")
         this.newBox.classList.add("not-clicked")
-        this.newBox.style.backgroundColor = 'limegreen'
+        this.newBox.style.backgroundColor = 'transparant'
     }
     clickGreen() {
         const allGreenBoxes = document.querySelectorAll(".greenbox")
@@ -51,7 +51,7 @@ class Green extends Box {
 class Red extends Box {
     makeBoxRed() {
         this.newBox.classList.add("redbox")
-        this.newBox.style.backgroundColor = 'red'
+        this.newBox.style.backgroundColor = 'transparant'
     }
     clickRed() {
         const allRedBoxes = document.querySelectorAll(".redbox")
@@ -66,67 +66,67 @@ class Red extends Box {
     }
 }
 
-const greenbox1 = new Green()
-const redbox1 = new Red()
-greenbox1.createBox()
-greenbox1.makeBoxGreen()
-redbox1.createBox()
-redbox1.makeBoxRed()
+// const greenbox1 = new Green()
+// const redbox1 = new Red()
+// greenbox1.createBox()
+// greenbox1.makeBoxGreen()
+// redbox1.createBox()
+// redbox1.makeBoxRed()
 
 
-// let secondsDelay = 2400
+let secondsDelay = 2400
 
-// function decreaseDelaySeconds() {
-//     setInterval(function () {
-//         return secondsDelay -= 200
-//     }, 10000)
-// }
-
-
-// setInterval(function () {
-//     const startGameGreen = new Green()
-//     startGameGreen.createBox()
-//     startGameGreen.makeBoxGreen()
-//     startGameGreen.clickGreen()
-
-//     setTimeout(function () {
-//         startGameGreen.gameOverGreen()
-//     }, secondsDelay)
-// }, 2500)
+function decreaseDelaySeconds() {
+    setInterval(function () {
+        return secondsDelay -= 200
+    }, 10000)
+}
 
 
-// function getRandomSeconds(min, max) {
-//     return (Math.random() * (max - min + 1) + min)
-// }
+setInterval(function () {
+    const startGameGreen = new Green()
+    startGameGreen.createBox()
+    startGameGreen.makeBoxGreen()
+    startGameGreen.clickGreen()
+
+    setTimeout(function () {
+        startGameGreen.gameOverGreen()
+    }, secondsDelay)
+}, 2500)
 
 
-// function intervalRandomSeconds() {
-//     const randomSeconds = getRandomSeconds(1000, 15000)
-//     setTimeout(function () {
-//         const startGameRed = new Red()
-//         startGameRed.createBox()
-//         startGameRed.makeBoxRed()
-//         startGameRed.clickRed()
-
-//         intervalRandomSeconds()
-//         setTimeout(function () {
-//             startGameRed.removeRed()
-//         }, 2000)
-//     }, randomSeconds)
-// }
+function getRandomSeconds(min, max) {
+    return (Math.random() * (max - min + 1) + min)
+}
 
 
-// intervalRandomSeconds()
-// decreaseDelaySeconds()
+function intervalRandomSeconds() {
+    const randomSeconds = getRandomSeconds(1000, 15000)
+    setTimeout(function () {
+        const startGameRed = new Red()
+        startGameRed.createBox()
+        startGameRed.makeBoxRed()
+        startGameRed.clickRed()
+
+        intervalRandomSeconds()
+        setTimeout(function () {
+            startGameRed.removeRed()
+        }, 2000)
+    }, randomSeconds)
+}
 
 
-// const levelBoard = document.getElementById("level")
-// let level = 0
+intervalRandomSeconds()
+decreaseDelaySeconds()
 
-// setInterval(function () {
-//     level++
-//     levelBoard.innerHTML = `Level: ${level}`
-// }, 10000)
+
+const levelBoard = document.getElementById("level")
+let level = 0
+
+setInterval(function () {
+    level++
+    levelBoard.innerHTML = `Level: ${level}`
+}, 10000)
 
 
 
