@@ -39,7 +39,7 @@ Every x seconds an box (green) will appear and it will disappear after y seconds
 ### Milestone 8: UI
 - [ ] Green boxes become banana peels
 - [ ] Red boxes become racoons
-- [ ] Background becomes a beach
+- [x] Background becomes a beach
 - [ ] Scoreboard becomes a trash can
 - [ ] Update game over page
 - [ ] Welcome page + 'start game' button

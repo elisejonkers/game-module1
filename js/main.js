@@ -66,60 +66,67 @@ class Red extends Box {
     }
 }
 
-
-let secondsDelay = 2400
-
-function decreaseDelaySeconds() {
-    setInterval(function () {
-        return secondsDelay -= 200
-    }, 10000)
-}
+const greenbox1 = new Green()
+const redbox1 = new Red()
+greenbox1.createBox()
+greenbox1.makeBoxGreen()
+redbox1.createBox()
+redbox1.makeBoxRed()
 
 
-setInterval(function () {
-    const startGameGreen = new Green()
-    startGameGreen.createBox()
-    startGameGreen.makeBoxGreen()
-    startGameGreen.clickGreen()
+// let secondsDelay = 2400
 
-    setTimeout(function () {
-        startGameGreen.gameOverGreen()
-    }, secondsDelay)
-}, 2500)
+// function decreaseDelaySeconds() {
+//     setInterval(function () {
+//         return secondsDelay -= 200
+//     }, 10000)
+// }
 
 
-function getRandomSeconds(min, max) {
-    return (Math.random() * (max - min + 1) + min)
-}
+// setInterval(function () {
+//     const startGameGreen = new Green()
+//     startGameGreen.createBox()
+//     startGameGreen.makeBoxGreen()
+//     startGameGreen.clickGreen()
+
+//     setTimeout(function () {
+//         startGameGreen.gameOverGreen()
+//     }, secondsDelay)
+// }, 2500)
 
 
-function intervalRandomSeconds() {
-    const randomSeconds = getRandomSeconds(1000, 15000)
-    setTimeout(function () {
-        const startGameRed = new Red()
-        startGameRed.createBox()
-        startGameRed.makeBoxRed()
-        startGameRed.clickRed()
-
-        intervalRandomSeconds()
-        setTimeout(function () {
-            startGameRed.removeRed()
-        }, 2000)
-    }, randomSeconds)
-}
+// function getRandomSeconds(min, max) {
+//     return (Math.random() * (max - min + 1) + min)
+// }
 
 
-intervalRandomSeconds()
-decreaseDelaySeconds()
+// function intervalRandomSeconds() {
+//     const randomSeconds = getRandomSeconds(1000, 15000)
+//     setTimeout(function () {
+//         const startGameRed = new Red()
+//         startGameRed.createBox()
+//         startGameRed.makeBoxRed()
+//         startGameRed.clickRed()
+
+//         intervalRandomSeconds()
+//         setTimeout(function () {
+//             startGameRed.removeRed()
+//         }, 2000)
+//     }, randomSeconds)
+// }
 
 
-const levelBoard = document.getElementById("level")
-let level = 0
+// intervalRandomSeconds()
+// decreaseDelaySeconds()
 
-setInterval(function () {
-    level++
-    levelBoard.innerHTML = `Level: ${level}`
-}, 10000)
+
+// const levelBoard = document.getElementById("level")
+// let level = 0
+
+// setInterval(function () {
+//     level++
+//     levelBoard.innerHTML = `Level: ${level}`
+// }, 10000)
 
 
 
