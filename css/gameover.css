@@ -1,7 +1,13 @@
+/* background beach
+racoon laughing
+
+
+*/
+
 body {
     width: 100vw;
     height: 100vh;
-    background-image: url("../images/background.jpeg");
+    background-image: url("../images/gameoverbackground.png");
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
     position: absolute;
@@ -12,23 +18,27 @@ body {
       
 }
 
-.container {
-    size: 100vw 100vh;
-}
-
-#gamerules {
-    border: 1px solid black;
+.gameovercontainer {
+    /* border: 1px solid black;
     box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.5);
-    background-color: white;
+    background-color: white; */
     font-family: 'Montserrat', sans-serif;
     padding: 10px;
     width: 40vw;
-    height: 40vh;
-    opacity: 0.7;
+    height: 50vh;
     border-radius: 10px;
+    text-align: center;
+    font-size: 40px;
+    color: red;
 }
 
-.button {
+img {
+    position: absolute;
+    width: 20vw;
+    height: auto;
+}
+
+.playagain {
     width: 15vw;
     height: 10vh;
     border-radius: 10px;

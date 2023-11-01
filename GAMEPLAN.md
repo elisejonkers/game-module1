@@ -41,7 +41,7 @@ Every x seconds an box (green) will appear and it will disappear after y seconds
 - [x] Red boxes become racoons
 - [x] Background becomes a beach
 - [x] Scoreboard becomes a trash can
-- [ ] Update game over page
+- [x] Update game over page
 - [x] Welcome page + 'start game' button
 - [ ] Encouraging phrases during game (at header?)
 - [ ] Sound effects?
