@@ -21,6 +21,11 @@ class Box {
 
 
 class Green extends Box {
+    constructor (){
+        super();
+        this.height = 17
+        this.width = 13
+    }
     makeBoxGreen() {
         this.newBox.classList.add("greenbox")
         this.newBox.classList.add("not-clicked")
@@ -49,6 +54,11 @@ class Green extends Box {
 
 
 class Red extends Box {
+    constructor (){
+        super();
+        this.height = 23
+        this.width = 13
+    }
     makeBoxRed() {
         this.newBox.classList.add("redbox")
         this.newBox.style.backgroundColor = 'transparant'
@@ -78,7 +88,7 @@ let secondsDelay = 2400
 
 function decreaseDelaySeconds() {
     setInterval(function () {
-        return secondsDelay -= 200
+        return secondsDelay -= 300
     }, 10000)
 }
 
@@ -127,6 +137,8 @@ setInterval(function () {
     level++
     levelBoard.innerHTML = `Level: ${level}`
 }, 10000)
+
+//how can I store the final result of line 128 in a variable?
 
 
 

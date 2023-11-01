@@ -30,12 +30,8 @@ body {
     text-align: center;
     font-size: 40px;
     color: red;
-}
-
-img {
-    position: absolute;
-    width: 20vw;
-    height: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .playagain {
@@ -48,4 +44,14 @@ img {
     background-color: rgb(46, 134, 193);
     color: white;
     box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.5);
+}
+
+div {
+    color: white;
+}
+img {
+    position: absolute;
+    bottom: 15vh;
+    left: 28vw;
+    height: 30vh;
 }
