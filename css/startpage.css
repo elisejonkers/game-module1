@@ -18,6 +18,7 @@ body {
 
 #gamerules {
     border: 1px solid black;
+    /*box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.5);*/
     background-color: white;
     font-family: 'Montserrat', sans-serif;
     padding: 10px;
@@ -34,5 +35,4 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: large;
     font-weight: bold;
-
 }

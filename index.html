@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clean Up Game</title>
+    <title>Start page</title>
 
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/startpage.css">
 </head>
+<body>  
+<section class="container">
+    <div id="gamerules">
+        <h3>Beach Clean Up Game</h3>
+        <p>People keep throwing trash on the beach. In order to make the beach clean again, you can help us!
+            Pick up the trash by clicking on it. Don't wait to long to pick it up, otherwise it will end up in the
+            ocean. Everytime you go a level up, you have to pick up the banana peels faster and faster. 
+            <br>
+            <br>
+            But be careful with the racoons. If you give them the opportunity, they will go through the trash and it will end up on the beach again...
+        </p>
+    </div>
+</section>
 
-<body>
-    <section>
-        <header>
-            <img src="./images/trashcan.png" alt="Scoreboard image">
-            <div id="score" class="information" > Score: 0</div>
-            <div id="level" class="information">Level: 0</div>
-        </header> 
-    
-        <div id="gameboard"></div>
-    
-    </section>
-    
-    
+    <form action="./play.html">
+    <input class="button" type="submit" value="Start game!">
+    </form>
+
     <script src="./js/main.js"></script>
-
+    
 </body>
-
 </html>

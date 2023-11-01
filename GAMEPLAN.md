@@ -44,6 +44,7 @@ Every x seconds an box (green) will appear and it will disappear after y seconds
 - [ ] Update game over page
 - [x] Welcome page + 'start game' button
 - [ ] Encouraging phrases during game (at header?)
+- [ ] Sound effects?
 
 ### Debugging
 - [ ] Boxes can't overlap
