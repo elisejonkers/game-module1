@@ -1,50 +1,49 @@
 let count = 0
 
-
-class Box {
+class Object {
     constructor() {
         this.width = 13
         this.height = 19
-    }s
-    createBox() {
+    }
+    createObject() {
         this.parentElement = document.getElementById("gameboard")
-        this.newBox = document.createElement("div")
+        this.newObject = document.createElement("div")
 
-        this.newBox.style.width = this.width + 'vw'
-        this.newBox.style.height = this.height + 'vh'
-        this.newBox.style.left = (Math.random() * (100 - this.width) + 1) + 'vw'
-        this.newBox.style.bottom = (Math.random() * (90 - this.height) + 1) + 'vh'
+        this.newObject.style.width = this.width + 'vw'
+        this.newObject.style.height = this.height + 'vh'
+        this.newObject.style.left = (Math.random() * (100 - this.width) + 1) + 'vw'
+        this.newObject.style.bottom = (Math.random() * (90 - this.height) + 1) + 'vh'
 
-        this.parentElement.appendChild(this.newBox)
+        this.parentElement.appendChild(this.newObject)
     }
 }
-
-
-class Green extends Box {
-    constructor (){
+class Banana extends Object {
+    constructor() {
         super();
         this.height = 17
         this.width = 13
+        this.alreadyClicked = false
     }
-    makeBoxGreen() {
-        this.newBox.classList.add("greenbox")
-        this.newBox.classList.add("not-clicked")
-        this.newBox.style.backgroundColor = 'transparant'
+    makeBanana() {
+        this.newObject.classList.add("banana")
+        this.newObject.style.backgroundColor = 'transparant'
     }
-    clickGreen() {
-        const allGreenBoxes = document.querySelectorAll(".greenbox")
+    clickBanana() {
         let scoreBoard = document.getElementById("score")
 
-        allGreenBoxes.forEach((box) => {
-            box.addEventListener("click", () => {
-                count += 1
-                box.remove()
-                scoreBoard.innerHTML = `Score: ${count}`
-            })
-
+        this.newObject.addEventListener("click", () => {
+            count += 1
+            this.newObject.remove()
+            scoreBoard.innerHTML = `Score: ${count}`
+            this.alreadyClicked = true
         })
+
     }
-    gameOverGreen() {
+    gameOverBanana() {
+        if (!this.newObject) {
+            return
+        }
+        this.newObject.classList.add("not-clicked")
         const allNotClicked = document.querySelectorAll(".not-clicked")
         if (allNotClicked.length > 0) {
             location.href = "./gameover.html"
@@ -53,56 +52,64 @@ class Green extends Box {
 }
 
 
-class Red extends Box {
-    constructor (){
+class Racoon extends Object {
+    constructor() {
         super();
         this.height = 23
         this.width = 13
     }
-    makeBoxRed() {
-        this.newBox.classList.add("redbox")
-        this.newBox.style.backgroundColor = 'transparant'
+    makeRacoon() {
+        this.newObject.classList.add("racoon")
+        this.newObject.style.backgroundColor = 'transparant'
     }
-    clickRed() {
-        const allRedBoxes = document.querySelectorAll(".redbox")
-        allRedBoxes.forEach(function (box) {
-            box.addEventListener("click", function () {
+    clickRacoon() {
+        const allRacoons = document.querySelectorAll(".racoon")
+        allRacoons.forEach(function (object) {
+            object.addEventListener("click", function () {
                 location.href = "./gameover.html"
             })
         })
     }
-    removeRed() {
-        this.newBox.remove()
+    removeRacoon() {
+        this.newObject.remove()
     }
 }
 
-// const greenbox1 = new Green()
-// const redbox1 = new Red()
-// greenbox1.createBox()
-// greenbox1.makeBoxGreen()
-// redbox1.createBox()
-// redbox1.makeBoxRed()
+let bananaArray = []
+let intervalTime = 3000; // Initial interval time in milliseconds (5 seconds)
+let timer;
 
+function decreaseIntervalTime() {
+    clearInterval(timer);
 
-let secondsDelay = 2400
+    if (intervalTime <= 1000) {
+        intervalTime -= 100
+    } else {
+        intervalTime -= 1000;
+    }
 
-function decreaseDelaySeconds() {
-    setInterval(function () {
-        return secondsDelay -= 300
-    }, 10000)
+    console.log('Interval time:', intervalTime / 1000, 'seconds');
+
+    timer = setInterval(createBanana, intervalTime);
 }
 
+function createBanana() {
+    const newBanana = new Banana();
+    newBanana.createObject();
+    newBanana.makeBanana();
+    newBanana.clickBanana();
+    bananaArray.push(newBanana);
 
-setInterval(function () {
-    const startGameGreen = new Green()
-    startGameGreen.createBox()
-    startGameGreen.makeBoxGreen()
-    startGameGreen.clickGreen()
+    setTimeout(() => {
+        newBanana.gameOverBanana();
+    }, 2400);
+}
+// Initial timer
+timer = setInterval(createBanana, intervalTime);
 
-    setTimeout(function () {
-        startGameGreen.gameOverGreen()
-    }, secondsDelay)
-}, 2500)
+// Decrease interval time every 10 seconds
+setInterval(decreaseIntervalTime, 10000);
+
 
 
 function getRandomSeconds(min, max) {
@@ -113,21 +120,19 @@ function getRandomSeconds(min, max) {
 function intervalRandomSeconds() {
     const randomSeconds = getRandomSeconds(1000, 15000)
     setTimeout(function () {
-        const startGameRed = new Red()
-        startGameRed.createBox()
-        startGameRed.makeBoxRed()
-        startGameRed.clickRed()
+        const newRacoon = new Racoon()
+        newRacoon.createObject()
+        newRacoon.makeRacoon()
+        newRacoon.clickRacoon()
 
         intervalRandomSeconds()
         setTimeout(function () {
-            startGameRed.removeRed()
-        }, 2000)
+            newRacoon.removeRacoon()
+        }, 1500)
     }, randomSeconds)
 }
 
-
 intervalRandomSeconds()
-decreaseDelaySeconds()
 
 
 const levelBoard = document.getElementById("level")
@@ -139,6 +144,17 @@ setInterval(function () {
 }, 10000)
 
 //how can I store the final result of line 128 in a variable?
+
+
+
+
+
+
+
+
+
+
+
 
 
 
