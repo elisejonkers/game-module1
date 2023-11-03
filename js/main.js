@@ -102,7 +102,7 @@ function createBanana() {
 
     setTimeout(() => {
         newBanana.gameOverBanana();
-    }, 2400);
+    }, 2000);
 }
 // Initial timer
 timer = setInterval(createBanana, intervalTime);
